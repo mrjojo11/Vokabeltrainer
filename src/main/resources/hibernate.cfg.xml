@@ -5,12 +5,13 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatetest</property>
-        <property name="hibernate.connection.password">lg225295</property>
-        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/vokabelkasten?useSSL=false</property>
+        <property name="hibernate.connection.password">vokabelkasten</property>
+        <property name="hibernate.connection.username">vokabelkasten</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
+
         <mapping class="vokabelkarten.Vokabelkarte"></mapping>
     </session-factory>
 </hibernate-configuration>

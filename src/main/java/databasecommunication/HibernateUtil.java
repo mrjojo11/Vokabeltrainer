@@ -14,7 +14,7 @@ public class HibernateUtil
         try {
             // Create the SessionFactory from hibernate.cfg.xml
             return new AnnotationConfiguration().configure(
-                    new File("hibernate.cgf.xml")).buildSessionFactory();
+                    new File("C:\\Users\\Johannes\\Documents\\Vokabeltrainer\\src\\main\\resources\\hibernate.cfg.xml")).buildSessionFactory();
 
         } catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed

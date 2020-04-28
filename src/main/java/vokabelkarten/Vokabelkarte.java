@@ -7,44 +7,45 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@org.hibernate.annotations.Entity(optimisticLock = OptimisticLockType.ALL)
-@Table(name="vokabelkarten", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "ID") })
+@Table(name="vokabelkasten")
 
 public class Vokabelkarte implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     int id;
 
+    private static final long serialVersionUID = -1798070786993154676L;
 
+    @Column(name = "language")
     String language;
+
+    @Column(name = "eigenWort")
     String eigenWort;
+
+    @Column(name = "fremdWort")
     String fremdWort;
-    String set;
+
+    @Column(name = "series")
+    String series;
+
+    @Column(name = "type")
     String type;
+
+    @Column(name = "dateAdded")
     Date dateAdded;
 
+    @Column(name = "dateUsed")
     Date dateUsed;
+
+    @Column(name = "difficulty")
     int difficulty;
+
+    @Column(name = "numberCorrect")
     int numberCorrect;
+
+    @Column(name = "numberFalse")
     int numberFalse;
-
-
-//    public Vokabelkarte(int id, String language, String eigenWort, String fremdWort, String set, String type, Date dateAdded) {
-//        this.id = id;
-//        this.language = language;
-//        this.eigenWort = eigenWort;
-//        this.fremdWort = fremdWort;
-//        this.set = set;
-//        this.type = type;
-//        this.dateAdded = dateAdded;
-//
-//        this.dateUsed = dateAdded;
-//        this.difficulty = 0;
-//        this.numberCorrect = 0;
-//        this.numberFalse = 0;
-//    }
 
     public static void main(String[] args) {
         System.out.println("test");
@@ -66,12 +67,12 @@ public class Vokabelkarte implements Serializable {
         this.fremdWort = fremdWort;
     }
 
-    public String getSet() {
-        return set;
+    public String getSeries() {
+        return series;
     }
 
-    public void setSet(String set) {
-        this.set = set;
+    public void setSeries(String set) {
+        this.series = set;
     }
 
     public String getType() {
@@ -112,6 +113,22 @@ public class Vokabelkarte implements Serializable {
 
     public void setNumberCorrect(int numberCorrect) {
         this.numberCorrect = numberCorrect;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public int getNumberFalse() {
