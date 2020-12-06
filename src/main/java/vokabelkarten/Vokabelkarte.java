@@ -4,6 +4,7 @@ import org.hibernate.annotations.OptimisticLockType;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -18,52 +19,48 @@ public class Vokabelkarte implements Serializable {
     private static final long serialVersionUID = -1798070786993154676L;
 
     @Column(name = "language")
-    String language;
+    public String language;
 
     @Column(name = "eigenWort")
-    String eigenWort;
+    public ArrayList<Meaning> eigenWort;
 
     @Column(name = "fremdWort")
-    String fremdWort;
+    public ArrayList<Meaning> fremdWort;
 
     @Column(name = "series")
-    String series;
+    public String series;
 
     @Column(name = "type")
-    String type;
+    public String type;
 
     @Column(name = "dateAdded")
-    Date dateAdded;
+    public Date dateAdded;
 
     @Column(name = "dateUsed")
-    Date dateUsed;
+    public Date dateUsed;
 
     @Column(name = "difficulty")
-    int difficulty;
+    public int difficulty;
 
     @Column(name = "numberCorrect")
-    int numberCorrect;
+    public int numberCorrect;
 
     @Column(name = "numberFalse")
-    int numberFalse;
+    public int numberFalse;
 
-    public static void main(String[] args) {
-        System.out.println("test");
-    }
-
-    public String getEigenWort() {
+    public ArrayList<Meaning> getEigenWort() {
         return eigenWort;
     }
 
-    public void setEigenWort(String eigenWort) {
+    public void setEigenWort(ArrayList<Meaning> eigenWort) {
         this.eigenWort = eigenWort;
     }
 
-    public String getFremdWort() {
+    public ArrayList<Meaning> getFremdWort() {
         return fremdWort;
     }
 
-    public void setFremdWort(String fremdWort) {
+    public void setFremdWort(ArrayList<Meaning> fremdWort) {
         this.fremdWort = fremdWort;
     }
 

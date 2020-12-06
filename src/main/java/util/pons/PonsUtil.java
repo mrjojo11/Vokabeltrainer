@@ -1,4 +1,4 @@
-package util;
+package util.pons;
 
 import org.apache.http.client.fluent.Request;
 
@@ -17,6 +17,17 @@ public class PonsUtil {
                     .socketTimeout(1000)
                     .execute().returnContent().asString();
             return result;
+    }
+
+    public static void main(String[] args) {
+        PonsUtil test = new PonsUtil("fr");
+        try{
+            System.out.println(test.getTranslation("instar"));
+        } catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
     }
 
     public String getLanguage() {
